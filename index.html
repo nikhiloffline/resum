@@ -1,0 +1,113 @@
+<html>
+<head>
+<style>
+  h1 {
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item {
+    margin: 10px;
+  }
+
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<h1>Random Generator</h1>
+<div class="container">
+  <div class="item">
+    <p id="name">Name: </p>
+    <button class="button" onclick="copyName()">Copy</button>
+  </div>
+  <div class="item">
+    <p id="phone">Phon_Number: </p>
+    <button class="button" onclick="copyPhone()">Copy</button>
+  </div>
+  <div class="item">
+    <p id="pin">Pin  Code: </p>
+    <button class="button" onclick="copyPin()">Copy</button>
+  </div>
+  <div class="item">
+    <button class="button" onclick="next()">Next</button>
+  </div>
+</div>
+<script>
+  // Arrays of names, phone numbers and pin codes
+  var names = ["Aarav", "Aditi", "Ananya", "Arjun", "Divya", "Kabir", "Neha", "Riya", "Samar", "Zara"];
+  var phones = ["+91-9876543210", "+91-8765432109", "+91-7654321098", "+91-6543210987", "+91-5432109876", "+91-4321098765", "+91-3210987654", "+91-2109876543", "+91-1098765432", "+91-0987654321"];
+  var pins = ["110001", "110002", "110003", "110004", "110005", "110006", "110007", "110008", "110009", "110010"];
+
+  // Function to generate a random index from an array
+  function randomIndex(array) {
+    return Math.floor(Math.random() * array.length);
+  }
+
+  // Function to display a random name from the names array
+  function displayName() {
+    var name = names[randomIndex(names)];
+    document.getElementById("name").innerHTML = "Name: " + name;
+  }
+
+  // Function to display a random phone number from the phones array
+  function displayPhone() {
+    var phone = phones[randomIndex(phones)];
+    document.getElementById("phone").innerHTML = "account number:- " + phone;
+  }
+
+  // Function to display a random pin code from the pins array
+  function displayPin() {
+    var pin = pins[randomIndex(pins)];
+    document.getElementById("pin").innerHTML = "IFSC Code:- " + pin;
+  }
+
+  // Function to copy the name to the clipboard
+  function copyName() {
+    var name = document.getElementById("name").innerHTML.slice(6);
+    navigator.clipboard.writeText(name);
+    alert("Copied the name: " + name);
+  }
+
+  // Function to copy the phone number to the clipboard
+  function copyPhone() {
+    var phone = document.getElementById("phone").innerHTML.slice(14);
+    navigator.clipboard.writeText(phone);
+    alert("Copied the phone number: " + phone);
+  }
+
+  // Function to copy the pin code to the clipboard
+  function copyPin() {
+    var pin = document.getElementById("pin").innerHTML.slice(9);
+    navigator.clipboard.writeText(pin);
+    alert("Copied the pin code: " + pin);
+  }
+
+  // Function to display new random values from the arrays
+  function next() {
+    displayName();
+    displayPhone();
+    displayPin();
+  }
+
+  // Display the initial values
+  displayName();
+  displayPhone();
+  displayPin();
+</script>
+</body>
+</html>
