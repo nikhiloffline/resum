@@ -1,12 +1,22 @@
 <html>
 <head>
 <style>
+  
+  body {
+    background-color:	 #cccccc;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
     #nex {
-    padding-top: 14rem;
+    padding-top: 25rem;
     
     }
   h1 {
     text-align: center;
+    color: #4682B4;
+    
+    
   }
 
   .container {
@@ -23,15 +33,16 @@
     .button {
       /* Basic Button Styles */
       display: inline-block;
-      padding: 1rem 2rem;
-      background-color: #4CAF50;
-      color: white;
-      font-size: 16px;
+      padding: 3rem 9rem;
+      background-color: #0e0f0f;
+      color: rgb(255, 0, 0);
+      font-size: 4rem;
+      
       text-decoration: none;
       border: none;
       cursor: pointer;
       /* Fancy CSS3 Styles */
-      border-radius: 5px;
+      border-radius: 2rem;
       box-shadow: inset 0 -3px 0 #388E3C;
       transition: all 0.01s ease-in-out;
     }
@@ -42,8 +53,9 @@
 
     .button:active {
       transform: translateY(1px);
-      box-shadow: inset 0 2px 0 #388E3C;
+      box-shadow: inset 0 2px 0 #01ec0d;
     }
+    
 </style>
 </head>
 <body>
@@ -79,7 +91,7 @@
   // Function to display a random name from the names array
   function displayName() {
     var name = names[randomIndex(names)];
-    document.getElementById("name").innerHTML = "Name: " + name;
+    document.getElementById("name").innerHTML = "Name :- " + name;
   }
 
   // Function to display a random phone number from the phones array
@@ -91,7 +103,7 @@
   // Function to display a random pin code from the pins array
   function displayPin() {
     var pin = pins[randomIndex(pins)];
-    document.getElementById("pin").innerHTML = "IFSC code:- " + pin;
+    document.getElementById("pin").innerHTML = "IFSC code:- " + pin ;
   }
 
   // Function to copy the name to the clipboard
