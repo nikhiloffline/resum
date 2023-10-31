@@ -1,6 +1,10 @@
 <html>
 <head>
 <style>
+    #nex {
+    padding-top: 14rem;
+    
+    }
   h1 {
     text-align: center;
   }
@@ -15,43 +19,57 @@
     margin: 10px;
   }
 
-  .button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-  }
+  
+    .button {
+      /* Basic Button Styles */
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      /* Fancy CSS3 Styles */
+      border-radius: 5px;
+      box-shadow: inset 0 -3px 0 #388E3C;
+      transition: all 0.01s ease-in-out;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button:active {
+      transform: translateY(1px);
+      box-shadow: inset 0 2px 0 #388E3C;
+    }
 </style>
 </head>
 <body>
-<h1>Bank_Account </h1>
+<h1>Random Generator</h1>
 <div class="container">
   <div class="item">
     <p id="name">Name: </p>
     <button class="button" onclick="copyName()">Copy</button>
   </div>
   <div class="item">
-    <p id="phone">Phon_Number: </p>
+    <p id="phone">Phone Number: </p>
     <button class="button" onclick="copyPhone()">Copy</button>
   </div>
   <div class="item">
-    <p id="pin">Pin  Code: </p>
+    <p id="pin">Pin Code: </p>
     <button class="button" onclick="copyPin()">Copy</button>
   </div>
-  <div class="item">
-    <button class="button" onclick="next()">Next</button>
+  <div class="item" id="nex">
+    <button class="button" id="nexx" onclick="next()">Next</button>
   </div>
 </div>
 <script>
   // Arrays of names, phone numbers and pin codes
   var names = ["Aarav", "Aditi", "Ananya", "Arjun", "Divya", "Kabir", "Neha", "Riya", "Samar", "Zara"];
-  var phones = [" 9876543210", " 8765432109", " 7654321098", " 6543210987", " 5432109876", " 4321098765", " 3210987654", " 2109876543", " 1098765432", " 0987654321"];
-  var pins = ["110001", "110002", "110003", "110004", "110005", "110006", "110007", "110008", "110009", "110010"];
+  var phones = ["50100423788644", "50100423788648","50100423788642"," 50100423788942","50100423789942","50100423788642"];
+  var pins = [ "HDFC0000003", "HDFC0000011", "HDFC0000026", "HDFC0000027", "HDFC0000032", "HDFC0000043", "HDFC0000080", "HDFC0000091"];
 
   // Function to generate a random index from an array
   function randomIndex(array) {
@@ -67,13 +85,13 @@
   // Function to display a random phone number from the phones array
   function displayPhone() {
     var phone = phones[randomIndex(phones)];
-    document.getElementById("phone").innerHTML = "account number:- " + phone;
+    document.getElementById("phone").innerHTML = "Bank account :- " + phone;
   }
 
   // Function to display a random pin code from the pins array
   function displayPin() {
     var pin = pins[randomIndex(pins)];
-    document.getElementById("pin").innerHTML = "IFSC Code:- " + pin;
+    document.getElementById("pin").innerHTML = "IFSC code:- " + pin;
   }
 
   // Function to copy the name to the clipboard
