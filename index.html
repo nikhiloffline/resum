@@ -2,19 +2,28 @@
 <head>
 <style>
   
+  #rr {
+    display: none;
+    
+  }
+  
   body {
     background-color:	 #cccccc;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    font-size: 6rem;
+    padding-left: 10rem;
   }
     #nex {
-    padding-top: 25rem;
+    padding-top: 4rem;
     
     }
-  h1 {
+  h1 { 
     text-align: center;
-    color: #4682B4;
+    color: #4682B4 ;
+    font-size: 7rem;
+    
     
     
   }
@@ -33,10 +42,10 @@
     .button {
       /* Basic Button Styles */
       display: inline-block;
-      padding: 3rem 9rem;
-      background-color: #0e0f0f;
-      color: rgb(255, 0, 0);
-      font-size: 4rem;
+      padding: 4rem 12rem;
+      font-size: 4em;
+     
+      
       
       text-decoration: none;
       border: none;
@@ -45,6 +54,21 @@
       border-radius: 2rem;
       box-shadow: inset 0 -3px 0 #388E3C;
       transition: all 0.01s ease-in-out;
+
+      background: #162938  ;
+    border: none;
+    outline:none;
+    border-radius: 65px; 
+    cursor: pointer;
+    font-size: 4rem;
+    color: #ffff;
+    font-weight: 500;
+
+
+
+
+
+
     }
 
     .button:hover {
@@ -59,24 +83,25 @@
 </style>
 </head>
 <body>
-<h1>Random Generator</h1>
+<h1>Bank Account</h1>
 <div class="container">
   <div class="item">
     <p id="name">Name: </p>
-    <button class="button" onclick="copyName()">Copy</button>
+    <button class="button" id="rr" onclick="copyName()">Copy</button>
   </div>
   <div class="item">
     <p id="phone">Phone Number: </p>
-    <button class="button" onclick="copyPhone()">Copy</button>
+    <button class="button" id="rr" onclick="copyPhone()">Copy</button>
   </div>
   <div class="item">
     <p id="pin">Pin Code: </p>
-    <button class="button" onclick="copyPin()">Copy</button>
+    <button class="button" id="rr" onclick="copyPin()">Copy</button>
   </div>
   <div class="item" id="nex">
     <button class="button" id="nexx" onclick="next()">Next</button>
   </div>
 </div>
+<div  id="as">
 <script>
   // Arrays of names, phone numbers and pin codes
   var names = ["Aarav", "Aditi", "Ananya", "Arjun", "Divya", "Kabir", "Neha", "Riya", "Samar", "Zara","Muhammad","Sai","Advik","Rudra","Aayansh","Adi","Dhruv","Veer","Ahmed","Viyaan","Shiv","Atharv","Ivaan","Yuvaan","Ishaan","Kabir","Arjun","Shivay","Vihaan","Aarav","Agastya","Rian","Shivansh","Avyaan","Vedansh","Ayaan","Nathan","Riyaan","Anay","Emmanuel","Aidan","Aditya","George","Tejas","Advait","Vivaan","Krishna","Raghav","Reyansh","Ibrahim","Aaryan","Zayan","Zayne","Advit","Anand","Om","Parth","Rudransh","Vikramaditya","Kiaan","Saatvik","Kanha","Moksh","Krish","Madhav","Aarush","Nihit","Shlok","Adam","Pranav","Priyansh","Viraj","Rishaan","Ritvik","Ethan","Kartikeya","Shaurya","Joseph","Shreshth","Revaan","Aviraj","Jayden","Viransh","Zion","Pranit","Jay","Syed","Elvin","Chris","Ravi","Daksh","Saiyam","Ayman","Benjamin","Siddhant","Dhakshan","Farhan","Kavin","Lakshan","Manas","Aaron","Shravan","Anvit","Srihan","Tanish","Yuvi","Zohaan","Virat","Yohan","Kriyansh"];
@@ -91,19 +116,19 @@
   // Function to display a random name from the names array
   function displayName() {
     var name = names[randomIndex(names)];
-    document.getElementById("name").innerHTML = "Name :- " + name;
+    document.getElementById("name").innerHTML = "Name :-     " + name;
   }
 
   // Function to display a random phone number from the phones array
   function displayPhone() {
     var phone = phones[randomIndex(phones)];
-    document.getElementById("phone").innerHTML = "Bank account :- " + phone;
+    document.getElementById("phone").innerHTML = "Bank Account :-     " + phone;
   }
 
   // Function to display a random pin code from the pins array
   function displayPin() {
     var pin = pins[randomIndex(pins)];
-    document.getElementById("pin").innerHTML = "IFSC code:- " + pin ;
+    document.getElementById("pin").innerHTML = "IFSC code:-     " + pin ;
   }
 
   // Function to copy the name to the clipboard
@@ -139,5 +164,7 @@
   displayPhone();
   displayPin();
 </script>
+
+</div>
 </body>
 </html>
